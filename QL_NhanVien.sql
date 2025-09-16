@@ -1,0 +1,55 @@
+﻿use QL_NhanVien;
+go
+
+--Bảng TaiKhoan
+CREATE TABLE TaiKhoan (
+    MaTK INT IDENTITY(1,1) PRIMARY KEY,
+    TenTK NVARCHAR(50) NOT NULL,
+    MatKhau NVARCHAR(255) NOT NULL,
+    VaiTro NVARCHAR(20) NOT NULL CHECK (VaiTro IN ('QuanLy', 'NhanVien'))
+);
+
+--Bảng CongViec
+CREATE TABLE CongViec (
+    MaCV INT IDENTITY(1,1) PRIMARY KEY,
+    TenCV NVARCHAR(50) NOT NULL UNIQUE,
+    LuongCoBan DECIMAL(18,2) NOT NULL CHECK (LuongCoBan >= 0)
+);
+
+--Bảng NhanVien
+CREATE TABLE NhanVien (
+    MaNV INT IDENTITY(1,1) PRIMARY KEY,
+    HoTen NVARCHAR(100) NOT NULL,
+    DiaChi NVARCHAR(200),
+    NgaySinh DATE CHECK (NgaySinh <= GETDATE()),
+    Email NVARCHAR(100) UNIQUE,
+    SDT NVARCHAR(15) UNIQUE,
+    MaTK INT NULL UNIQUE, 
+    MaCV INT NOT NULL,
+    FOREIGN KEY (MaTK) REFERENCES TaiKhoan(MaTK) ON DELETE SET NULL,
+    FOREIGN KEY (MaCV) REFERENCES CongViec(MaCV) ON DELETE CASCADE
+);
+
+-- Bảng ChamCong
+CREATE TABLE ChamCong (
+    MaNV INT NOT NULL,
+    Ngay DATE NOT NULL,
+    GioVao TIME NOT NULL,
+    GioRa TIME NOT NULL,
+    SoGioLam AS DATEDIFF(HOUR, GioVao, GioRa) PERSISTED,
+    SoGioTangCa INT DEFAULT 0 CHECK (SoGioTangCa >= 0),
+    PRIMARY KEY (MaNV, Ngay),
+    FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV) ON DELETE CASCADE
+);
+
+-- Bảng Luong
+CREATE TABLE Luong (
+    MaLuong INT IDENTITY(1,1) PRIMARY KEY,
+    MaNV INT NOT NULL,
+    Thuong DECIMAL(18,2) DEFAULT 0 CHECK (Thuong >= 0),
+    PhuCap DECIMAL(18,2) DEFAULT 0 CHECK (PhuCap >= 0),
+    LuongTangCa DECIMAL(18,2) DEFAULT 0 CHECK (LuongTangCa >= 0),
+    TongLuong DECIMAL(18,2),
+    FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV) ON DELETE CASCADE
+);
+

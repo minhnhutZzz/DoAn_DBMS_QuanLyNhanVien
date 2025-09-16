@@ -1,0 +1,15 @@
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\bin\Debug\QL_NhanVien.exe.config
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\bin\Debug\QL_NhanVien.exe
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\bin\Debug\QL_NhanVien.pdb
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\bin\Debug\Guna.UI2.dll
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.csproj.AssemblyReference.cache
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.frmLogin.resources
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.frmMenu.resources
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.Properties.Resources.resources
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.UC_Quanlytaikhoan.resources
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.csproj.GenerateResource.cache
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.csproj.CoreCompileInputs.cache
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanV.3D021BAF.Up2Date
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.exe
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.pdb
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.UC_Quanlynhanvien.resources
