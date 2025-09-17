@@ -34,6 +34,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblQuanlytaikhoan = new System.Windows.Forms.Label();
             this.dgvTaiKhoan = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.maTKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenTKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matKhauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vaiTroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taiKhoanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.qL_NhanVienDataSet2 = new QL_NhanVien.QL_NhanVienDataSet2();
             this.lblDanhsachtaikhoan = new System.Windows.Forms.Label();
@@ -55,10 +59,15 @@
             this.taiKhoanTableAdapter1 = new QL_NhanVien.QL_NhanVienDataSet1TableAdapters.TaiKhoanTableAdapter();
             this.taiKhoanTableAdapter2 = new QL_NhanVien.QL_NhanVienDataSet2TableAdapters.TaiKhoanTableAdapter();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.maTKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenTKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matKhauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vaiTroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2AnimateWindow2 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2AnimateWindow3 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2AnimateWindow4 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2BorderlessForm3 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2AnimateWindow5 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2BorderlessForm4 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2AnimateWindow6 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_NhanVienDataSet2)).BeginInit();
@@ -112,12 +121,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTaiKhoan.GridColor = System.Drawing.Color.White;
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(536, 200);
+            this.dgvTaiKhoan.Location = new System.Drawing.Point(517, 208);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersVisible = false;
             this.dgvTaiKhoan.RowHeadersWidth = 51;
             this.dgvTaiKhoan.RowTemplate.Height = 24;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(445, 269);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(659, 281);
             this.dgvTaiKhoan.TabIndex = 1;
             this.dgvTaiKhoan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvTaiKhoan.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -143,6 +152,43 @@
             this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellClick);
             this.dgvTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellContentClick);
             // 
+            // maTKDataGridViewTextBoxColumn
+            // 
+            this.maTKDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.maTKDataGridViewTextBoxColumn.DataPropertyName = "MaTK";
+            this.maTKDataGridViewTextBoxColumn.HeaderText = "MaTK";
+            this.maTKDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maTKDataGridViewTextBoxColumn.Name = "maTKDataGridViewTextBoxColumn";
+            this.maTKDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maTKDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tenTKDataGridViewTextBoxColumn
+            // 
+            this.tenTKDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.tenTKDataGridViewTextBoxColumn.DataPropertyName = "TenTK";
+            this.tenTKDataGridViewTextBoxColumn.HeaderText = "TenTK";
+            this.tenTKDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenTKDataGridViewTextBoxColumn.Name = "tenTKDataGridViewTextBoxColumn";
+            this.tenTKDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // matKhauDataGridViewTextBoxColumn
+            // 
+            this.matKhauDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.matKhauDataGridViewTextBoxColumn.DataPropertyName = "MatKhau";
+            this.matKhauDataGridViewTextBoxColumn.HeaderText = "MatKhau";
+            this.matKhauDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.matKhauDataGridViewTextBoxColumn.Name = "matKhauDataGridViewTextBoxColumn";
+            this.matKhauDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // vaiTroDataGridViewTextBoxColumn
+            // 
+            this.vaiTroDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.vaiTroDataGridViewTextBoxColumn.DataPropertyName = "VaiTro";
+            this.vaiTroDataGridViewTextBoxColumn.HeaderText = "VaiTro";
+            this.vaiTroDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.vaiTroDataGridViewTextBoxColumn.Name = "vaiTroDataGridViewTextBoxColumn";
+            this.vaiTroDataGridViewTextBoxColumn.Width = 120;
+            // 
             // taiKhoanBindingSource2
             // 
             this.taiKhoanBindingSource2.DataMember = "TaiKhoan";
@@ -157,7 +203,7 @@
             // 
             this.lblDanhsachtaikhoan.AutoSize = true;
             this.lblDanhsachtaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDanhsachtaikhoan.Location = new System.Drawing.Point(635, 145);
+            this.lblDanhsachtaikhoan.Location = new System.Drawing.Point(723, 145);
             this.lblDanhsachtaikhoan.Name = "lblDanhsachtaikhoan";
             this.lblDanhsachtaikhoan.Size = new System.Drawing.Size(246, 29);
             this.lblDanhsachtaikhoan.TabIndex = 2;
@@ -182,7 +228,7 @@
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.PlaceholderText = "";
             this.txtTenTK.SelectedText = "";
-            this.txtTenTK.Size = new System.Drawing.Size(166, 48);
+            this.txtTenTK.Size = new System.Drawing.Size(201, 49);
             this.txtTenTK.TabIndex = 3;
             // 
             // txtMatKhau
@@ -204,23 +250,22 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PlaceholderText = "";
             this.txtMatKhau.SelectedText = "";
-            this.txtMatKhau.Size = new System.Drawing.Size(166, 48);
+            this.txtMatKhau.Size = new System.Drawing.Size(201, 54);
             this.txtMatKhau.TabIndex = 4;
             // 
             // guna2Button1
             // 
             this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.BorderThickness = 1;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Yellow;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(51, 495);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Blue;
+            this.guna2Button1.Location = new System.Drawing.Point(85, 511);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(160, 52);
+            this.guna2Button1.Size = new System.Drawing.Size(160, 70);
             this.guna2Button1.TabIndex = 5;
             this.guna2Button1.Text = "Thêm tài khoản";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -228,17 +273,16 @@
             // guna2Button2
             // 
             this.guna2Button2.BorderRadius = 20;
-            this.guna2Button2.BorderThickness = 1;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.Yellow;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(261, 495);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Blue;
+            this.guna2Button2.Location = new System.Drawing.Point(294, 511);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(156, 52);
+            this.guna2Button2.Size = new System.Drawing.Size(156, 70);
             this.guna2Button2.TabIndex = 6;
             this.guna2Button2.Text = "Xóa tài khoản";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
@@ -248,7 +292,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 92);
+            this.label2.Location = new System.Drawing.Point(18, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 20);
             this.label2.TabIndex = 8;
@@ -258,7 +302,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 162);
+            this.label3.Location = new System.Drawing.Point(18, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 20);
             this.label3.TabIndex = 10;
@@ -268,7 +312,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 236);
+            this.label4.Location = new System.Drawing.Point(18, 236);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 12;
@@ -284,12 +328,12 @@
             this.guna2GroupBox1.Controls.Add(this.txtMatKhau);
             this.guna2GroupBox1.Controls.Add(this.label3);
             this.guna2GroupBox1.Controls.Add(this.txtTenTK);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Yellow;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.Red;
+            this.guna2GroupBox1.ForeColor = System.Drawing.Color.Blue;
             this.guna2GroupBox1.Location = new System.Drawing.Point(51, 145);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(366, 324);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(432, 344);
             this.guna2GroupBox1.TabIndex = 14;
             this.guna2GroupBox1.Text = "Thông tin tài khoản";
             // 
@@ -309,7 +353,7 @@
             "Nhân viên"});
             this.cboVaiTro.Location = new System.Drawing.Point(165, 220);
             this.cboVaiTro.Name = "cboVaiTro";
-            this.cboVaiTro.Size = new System.Drawing.Size(166, 36);
+            this.cboVaiTro.Size = new System.Drawing.Size(201, 36);
             this.cboVaiTro.TabIndex = 13;
             // 
             // qL_NhanVienDataSet
@@ -346,7 +390,7 @@
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.Image = global::QL_NhanVien.Properties.Resources.account;
+            this.guna2PictureBox1.Image = global::QL_NhanVien.Properties.Resources.user2;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(51, 33);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
@@ -355,45 +399,35 @@
             this.guna2PictureBox1.TabIndex = 15;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // maTKDataGridViewTextBoxColumn
+            // guna2BorderlessForm1
             // 
-            this.maTKDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.maTKDataGridViewTextBoxColumn.DataPropertyName = "MaTK";
-            this.maTKDataGridViewTextBoxColumn.HeaderText = "MaTK";
-            this.maTKDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maTKDataGridViewTextBoxColumn.Name = "maTKDataGridViewTextBoxColumn";
-            this.maTKDataGridViewTextBoxColumn.ReadOnly = true;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // tenTKDataGridViewTextBoxColumn
+            // guna2BorderlessForm2
             // 
-            this.tenTKDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.tenTKDataGridViewTextBoxColumn.DataPropertyName = "TenTK";
-            this.tenTKDataGridViewTextBoxColumn.HeaderText = "TenTK";
-            this.tenTKDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenTKDataGridViewTextBoxColumn.Name = "tenTKDataGridViewTextBoxColumn";
+            this.guna2BorderlessForm2.ContainerControl = this;
+            this.guna2BorderlessForm2.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm2.TransparentWhileDrag = true;
             // 
-            // matKhauDataGridViewTextBoxColumn
+            // guna2BorderlessForm3
             // 
-            this.matKhauDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.matKhauDataGridViewTextBoxColumn.DataPropertyName = "MatKhau";
-            this.matKhauDataGridViewTextBoxColumn.HeaderText = "MatKhau";
-            this.matKhauDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.matKhauDataGridViewTextBoxColumn.Name = "matKhauDataGridViewTextBoxColumn";
+            this.guna2BorderlessForm3.ContainerControl = this;
+            this.guna2BorderlessForm3.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm3.TransparentWhileDrag = true;
             // 
-            // vaiTroDataGridViewTextBoxColumn
+            // guna2BorderlessForm4
             // 
-            this.vaiTroDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.vaiTroDataGridViewTextBoxColumn.DataPropertyName = "VaiTro";
-            this.vaiTroDataGridViewTextBoxColumn.HeaderText = "VaiTro";
-            this.vaiTroDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vaiTroDataGridViewTextBoxColumn.Name = "vaiTroDataGridViewTextBoxColumn";
-            this.vaiTroDataGridViewTextBoxColumn.Width = 120;
+            this.guna2BorderlessForm4.ContainerControl = this;
+            this.guna2BorderlessForm4.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm4.TransparentWhileDrag = true;
             // 
             // UC_Quanlytaikhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2Button2);
@@ -403,7 +437,7 @@
             this.Controls.Add(this.lblQuanlytaikhoan);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "UC_Quanlytaikhoan";
-            this.Size = new System.Drawing.Size(1122, 606);
+            this.Size = new System.Drawing.Size(1204, 628);
             this.Load += new System.EventHandler(this.UC_Quanlytaikhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource2)).EndInit();
@@ -448,5 +482,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenTKDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn matKhauDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vaiTroDataGridViewTextBoxColumn;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow2;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow3;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm2;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow4;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm3;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow5;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm4;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow6;
     }
 }

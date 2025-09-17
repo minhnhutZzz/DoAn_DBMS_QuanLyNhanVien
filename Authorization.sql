@@ -21,21 +21,25 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Luong TO role_QuanLy;
 
 -- Các stored procedure
 GRANT EXECUTE ON sp_ThemTaiKhoan TO role_QuanLy;
-GRANT EXECUTE ON sp_DoiMatKhau TO role_QuanLy;
 GRANT EXECUTE ON sp_XoaTaiKhoan TO role_QuanLy;
-GRANT EXECUTE ON sp_ThemCongViec TO role_QuanLy;
-GRANT EXECUTE ON sp_CapNhatLuongCongViec TO role_QuanLy;
+GRANT EXECUTE ON sp_DoiMatKhau TO role_QuanLy;
+
 GRANT EXECUTE ON sp_ThemNhanVien TO role_QuanLy;
 GRANT EXECUTE ON sp_XoaNhanVien TO role_QuanLy;
 GRANT EXECUTE ON sp_CapNhatNhanVien TO role_QuanLy;
+
+GRANT EXECUTE ON sp_ThemCongViec TO role_QuanLy;
+GRANT EXECUTE ON sp_XoaCongViec TO role_QuanLy;
+GRANT EXECUTE ON sp_CapNhatCongViec TO role_QuanLy;
+
 
 -- Các scalar function
 GRANT EXECUTE ON fn_LuongTheoGio TO role_QuanLy;
 GRANT EXECUTE ON fn_TongGioLamTrongThang TO role_QuanLy;
 GRANT EXECUTE ON fn_TongGioTangCaTrongThang TO role_QuanLy;
-GRANT EXECUTE ON fn_SoNhanVienTheoTenCongViec TO role_QuanLy;
 
 -- Table-valued functions (cấp quyền SELECT)
+GRANT SELECT ON fn_ThongKeSoNhanVienTheoCongViec TO role_QuanLy;
 GRANT SELECT ON fn_DanhSachNhanVienTheoTenCongViec TO role_QuanLy;
 GRANT SELECT ON fn_BangLuongThang TO role_QuanLy;
 

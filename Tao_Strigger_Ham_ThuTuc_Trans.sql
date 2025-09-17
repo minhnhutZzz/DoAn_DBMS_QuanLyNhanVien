@@ -2,18 +2,19 @@
 go
 
 --Hàm 
-go
-CREATE FUNCTION fn_SoNhanVienTheoTenCongViec(@TenCV NVARCHAR(50))
-RETURNS INT
+CREATE FUNCTION fn_ThongKeSoNhanVienTheoCongViec()
+RETURNS TABLE
 AS
-BEGIN
-    RETURN (
-        SELECT COUNT(*)
-        FROM NhanVien NV
-        JOIN CongViec CV ON NV.MaCV = CV.MaCV
-        WHERE CV.TenCV = @TenCV
-    );
-END;
+RETURN
+(
+    SELECT
+        CV.MaCV,              
+        CV.TenCV,             
+        COUNT(NV.MaNV) AS SoNhanVien  -- Số nhân viên
+    FROM CongViec CV
+    LEFT JOIN NhanVien NV ON NV.MaCV = CV.MaCV   
+    GROUP BY CV.MaCV, CV.TenCV                   
+);
 
 go
 CREATE FUNCTION fn_LuongTheoGio(@MaNV INT)
@@ -193,23 +194,41 @@ END;
 go
 CREATE PROCEDURE sp_ThemCongViec
     @TenCV NVARCHAR(50),
-    @LuongTheoGio DECIMAL(18,2)
+    @LuongCoBan DECIMAL(18,2)
 AS
 BEGIN
-    INSERT INTO CongViec(TenCV, LuongCoBan)
-    VALUES (@TenCV, @LuongTheoGio);
+    INSERT INTO CongViec (TenCV, LuongCoBan)
+    VALUES (@TenCV, @LuongCoBan);
 END;
 
 go
-CREATE PROCEDURE sp_CapNhatLuongCongViec
+CREATE PROCEDURE sp_CapNhatCongViec
     @MaCV INT,
-    @LuongMoi DECIMAL(18,2)
+    @TenCV NVARCHAR(50),
+    @LuongCoBan DECIMAL(18,2)
 AS
 BEGIN
     UPDATE CongViec
-    SET LuongCoBan = @LuongMoi
+    SET TenCV = @TenCV, LuongCoBan = @LuongCoBan
     WHERE MaCV = @MaCV;
 END;
+
+go
+CREATE PROCEDURE sp_XoaCongViec
+    @MaCV INT
+AS
+BEGIN
+    -- Kiểm tra xem công việc có đang được sử dụng không
+    IF EXISTS (SELECT 1 FROM NhanVien WHERE MaCV = @MaCV)
+    BEGIN
+        RAISERROR(N'Không thể xóa công việc vì có nhân viên đang làm việc!', 16, 1);
+    END
+    ELSE
+    BEGIN
+        DELETE FROM CongViec WHERE MaCV = @MaCV;
+    END
+END;
+
 
 go
 CREATE PROCEDURE sp_ThemNhanVien
@@ -292,10 +311,25 @@ BEGIN
     END
 END;
 
+go
+CREATE PROCEDURE sp_ChamCong
+    @MaNV INT,
+    @Ngay DATE,
+    @GioVao TIME,
+    @GioRa TIME,
+    @SoGioTangCa INT
+AS
+BEGIN
+    -- Chèn thông tin chấm công vào bảng ChamCong
+    INSERT INTO ChamCong (MaNV, Ngay, GioVao, GioRa, SoGioTangCa)
+    VALUES (@MaNV, @Ngay, @GioVao, @GioRa, @SoGioTangCa);
+END;
+
+
 
 go
 
-CREATE TRIGGER trg_UpdateLuongTangCa
+CREATE TRIGGER trg_Update_LuongTangCa_TongLuong
 ON ChamCong
 AFTER INSERT, UPDATE
 AS
@@ -325,6 +359,7 @@ BEGIN
     SET LuongTangCa = @LuongTangCa, TongLuong = @TongLuong
     WHERE MaNV = @MaNV;
 END;
+
 
 
 go

@@ -22,15 +22,16 @@ namespace QL_NhanVien
            pnMenu.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             pnMenu.Controls.Add(uc);
-            
-
-            
-
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-
+            if (GlobalState.VaiTro == "NhanVien")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            LoadForm(new UC_ChamCong());
         }
 
         private void btnQuanlytaikhoan_Click(object sender, EventArgs e)
@@ -54,6 +55,36 @@ namespace QL_NhanVien
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuanlycongviec_Click(object sender, EventArgs e)
+        {
+            if (GlobalState.VaiTro == "NhanVien")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            LoadForm(new UC_Quanlycongviec());
+        }
+
+        private void btnTinhluong_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnXembangluong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHosocanhan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }

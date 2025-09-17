@@ -211,5 +211,10 @@ namespace QL_NhanVien
         {
             ClearForm();
         }
+
+        private void dgvNhanvientheocongviec_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

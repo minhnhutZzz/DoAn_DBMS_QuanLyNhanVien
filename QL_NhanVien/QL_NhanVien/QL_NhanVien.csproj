@@ -78,6 +78,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_NhanVienDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QL_NhanVienDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_NhanVienDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QL_NhanVienDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_NhanVienDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QL_NhanVienDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_NhanVienDataSet12.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QL_NhanVienDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,6 +128,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_NhanVienDataSet8.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QL_NhanVienDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_NhanVienDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ChamCong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ChamCong.Designer.cs">
+      <DependentUpon>UC_ChamCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Quanlycongviec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Quanlycongviec.Designer.cs">
+      <DependentUpon>UC_Quanlycongviec.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Quanlynhanvien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +173,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC_ChamCong.resx">
+      <DependentUpon>UC_ChamCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Quanlycongviec.resx">
+      <DependentUpon>UC_Quanlycongviec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Quanlynhanvien.resx">
       <DependentUpon>UC_Quanlynhanvien.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +216,39 @@
     </None>
     <None Include="QL_NhanVienDataSet1.xss">
       <DependentUpon>QL_NhanVienDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet10.xsc">
+      <DependentUpon>QL_NhanVienDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_NhanVienDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_NhanVienDataSet10.xss">
+      <DependentUpon>QL_NhanVienDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet11.xsc">
+      <DependentUpon>QL_NhanVienDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_NhanVienDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_NhanVienDataSet11.xss">
+      <DependentUpon>QL_NhanVienDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet12.xsc">
+      <DependentUpon>QL_NhanVienDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_NhanVienDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_NhanVienDataSet12.xss">
+      <DependentUpon>QL_NhanVienDataSet12.xsd</DependentUpon>
     </None>
     <None Include="QL_NhanVienDataSet2.xsc">
       <DependentUpon>QL_NhanVienDataSet2.xsd</DependentUpon>
@@ -261,6 +332,17 @@
     <None Include="QL_NhanVienDataSet8.xss">
       <DependentUpon>QL_NhanVienDataSet8.xsd</DependentUpon>
     </None>
+    <None Include="QL_NhanVienDataSet9.xsc">
+      <DependentUpon>QL_NhanVienDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_NhanVienDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_NhanVienDataSet9.xss">
+      <DependentUpon>QL_NhanVienDataSet9.xsd</DependentUpon>
+    </None>
     <None Include="Resources\bg.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -289,6 +371,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\group2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\working.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d-briefcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
