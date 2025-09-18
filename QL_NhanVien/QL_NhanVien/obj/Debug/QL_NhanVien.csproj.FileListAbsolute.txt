@@ -15,3 +15,4 @@ D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_Nh
 D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.UC_Quanlynhanvien.resources
 D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.UC_Quanlycongviec.resources
 D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.UC_ChamCong.resources
+D:\Nam3_HK1_Dot1\HeQuanTriCSDL\DoAn_DBMS\QL_NhanVien\QL_NhanVien\obj\Debug\QL_NhanVien.UC_TinhLuong.resources

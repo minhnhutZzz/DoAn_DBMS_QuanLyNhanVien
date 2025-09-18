@@ -71,7 +71,12 @@ namespace QL_NhanVien
 
         private void btnTinhluong_Click(object sender, EventArgs e)
         {
-           
+            if (GlobalState.VaiTro == "NhanVien")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            LoadForm(new UC_TinhLuong());
         }
 
         private void btnXembangluong_Click(object sender, EventArgs e)

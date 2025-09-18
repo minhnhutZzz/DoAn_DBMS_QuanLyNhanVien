@@ -1,57 +1,6 @@
 ﻿use QL_NhanVien;
 go
 
---Hàm 
-CREATE FUNCTION fn_ThongKeSoNhanVienTheoCongViec()
-RETURNS TABLE
-AS
-RETURN
-(
-    SELECT
-        CV.MaCV,              
-        CV.TenCV,             
-        COUNT(NV.MaNV) AS SoNhanVien  -- Số nhân viên
-    FROM CongViec CV
-    LEFT JOIN NhanVien NV ON NV.MaCV = CV.MaCV   
-    GROUP BY CV.MaCV, CV.TenCV                   
-);
-
-go
-CREATE FUNCTION fn_LuongTheoGio(@MaNV INT)
-RETURNS DECIMAL(18,2)
-AS
-BEGIN
-    DECLARE @Luong DECIMAL(18,2);
-    SELECT @Luong = CV.LuongCoBan
-    FROM CongViec CV
-    JOIN NhanVien NV ON CV.MaCV = NV.MaCV
-    WHERE NV.MaNV = @MaNV;
-    RETURN ISNULL(@Luong, 0);
-END;
-
-go
-CREATE FUNCTION fn_TongGioLamTrongThang(@MaNV INT, @Thang INT, @Nam INT)
-RETURNS INT
-AS
-BEGIN
-    RETURN (
-        SELECT SUM(SoGioLam)
-        FROM ChamCong
-        WHERE MaNV = @MaNV AND MONTH(Ngay) = @Thang AND YEAR(Ngay) = @Nam
-    );
-END;
-
-go
-CREATE FUNCTION fn_TongGioTangCaTrongThang(@MaNV INT, @Thang INT, @Nam INT)
-RETURNS INT
-AS
-BEGIN
-    RETURN (
-        SELECT SUM(SoGioTangCa)
-        FROM ChamCong
-        WHERE MaNV = @MaNV AND MONTH(Ngay) = @Thang AND YEAR(Ngay) = @Nam
-    );
-END;
 
 --Hàm trả về bảng 
 go 
@@ -67,37 +16,53 @@ RETURN
 );
 
 go
-CREATE FUNCTION fn_BangLuongThang(@Thang INT, @Nam INT)
-RETURNS @BangLuong TABLE (
-    MaNV INT,
-    HoTen NVARCHAR(100),
-    TongGioLam INT,
-    TongGioTangCa INT,
-    LuongCoBan DECIMAL(18,2),
-    LuongTangCa DECIMAL(18,2),
-    TongLuong DECIMAL(18,2)
-)
+CREATE FUNCTION fn_ThongKeSoNhanVienTheoCongViec()
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT
+        CV.MaCV,              
+        CV.TenCV,             
+        COUNT(NV.MaNV) AS SoNhanVien  -- Số nhân viên
+    FROM CongViec CV
+    LEFT JOIN NhanVien NV ON NV.MaCV = CV.MaCV   
+    GROUP BY CV.MaCV, CV.TenCV                   
+);
+
+
+-- Hàm trả về giá trị
+go
+CREATE FUNCTION fn_TinhTongLuong()
+RETURNS DECIMAL(18, 2)
 AS
 BEGIN
-    INSERT INTO @BangLuong
-    SELECT 
-        NV.MaNV,
-        NV.HoTen,
-        ISNULL(SUM(CC.SoGioLam), 0) AS TongGioLam,
-        ISNULL(SUM(CC.SoGioTangCa), 0) AS TongGioTangCa,
-        CV.LuongCoBan,
-        ISNULL(SUM(CC.SoGioTangCa), 0) * CV.LuongCoBan * 1.5 AS LuongTangCa,
-        ISNULL(SUM(CC.SoGioLam), 0) * CV.LuongCoBan + 
-        ISNULL(SUM(CC.SoGioTangCa), 0) * CV.LuongCoBan * 1.5 AS TongLuong
-    FROM NhanVien NV
-    JOIN CongViec CV ON NV.MaCV = CV.MaCV
-    LEFT JOIN ChamCong CC ON NV.MaNV = CC.MaNV
-        AND MONTH(CC.Ngay) = @Thang AND YEAR(CC.Ngay) = @Nam
-    GROUP BY NV.MaNV, NV.HoTen, CV.LuongCoBan;
+    DECLARE @TongLuongToanBo DECIMAL(18, 2);
 
-    RETURN;
+    -- Tính tổng tất cả các tổng lương trong bảng Luong
+    SELECT @TongLuongToanBo = SUM(TongLuong)
+    FROM Luong;
+
+    -- Trả về tổng lương
+    RETURN @TongLuongToanBo;
 END;
 
+
+go
+CREATE FUNCTION fn_TinhTongLuongTheoMaNV(@MaNV INT)
+RETURNS DECIMAL(18, 2)
+AS
+BEGIN
+    DECLARE @TongLuong DECIMAL(18, 2);
+
+    -- Tính tổng tất cả các giá trị TongLuong của nhân viên trong bảng Luong
+    SELECT @TongLuong = SUM(TongLuong)
+    FROM Luong
+    WHERE MaNV = @MaNV;
+
+    -- Trả về tổng lương của nhân viên
+    RETURN ISNULL(@TongLuong, 0);  -- Trả về 0 nếu không có bản ghi lương nào
+END;
 
 
 --Thủ tục 
@@ -326,38 +291,83 @@ BEGIN
 END;
 
 
-
-go
-
-CREATE TRIGGER trg_Update_LuongTangCa_TongLuong
-ON ChamCong
-AFTER INSERT, UPDATE
+go  
+CREATE PROCEDURE sp_TinhLuong
+    @MaNV INT,
+    @Thuong DECIMAL(18, 2),
+    @PhuCap DECIMAL(18, 2)
 AS
 BEGIN
-    DECLARE @MaNV INT, @SoGioTangCa INT, @LuongCoBan DECIMAL(18, 2), @LuongTangCa DECIMAL(18, 2), @TongLuong DECIMAL(18, 2);
+    DECLARE @LuongCoBan DECIMAL(18, 2), @SoGioLam INT, @LuongTangCa DECIMAL(18, 2), @TongLuong DECIMAL(18, 2);
 
-    -- Lấy thông tin từ bảng ChamCong và CongViec
-    SELECT @MaNV = i.MaNV, @SoGioTangCa = i.SoGioTangCa
-    FROM INSERTED i;
-
-    -- Tính LuongTangCa từ bảng CongViec và SoGioTangCa trong ChamCong
+    -- Lấy Lương cơ bản từ bảng CongViec (lương theo giờ của công việc)
     SELECT @LuongCoBan = CV.LuongCoBan
     FROM CongViec CV
-    JOIN NhanVien NV ON CV.MaCV = NV.MaCV
+    JOIN NhanVien NV ON NV.MaCV = CV.MaCV
     WHERE NV.MaNV = @MaNV;
 
-    -- Tính LuongTangCa
-    SET @LuongTangCa = @SoGioTangCa * 1.5 * @LuongCoBan;
-
-    -- Tính TongLuong (Thuong + PhuCap + LuongTangCa)
-    SELECT @TongLuong = ISNULL(Lu.Thuong, 0) + ISNULL(Lu.PhuCap, 0) + @LuongTangCa
-    FROM Luong Lu
-    WHERE Lu.MaNV = @MaNV;
-
-    -- Cập nhật bảng Luong với giá trị tính được
-    UPDATE Luong
-    SET LuongTangCa = @LuongTangCa, TongLuong = @TongLuong
+    -- Lấy số giờ làm việc thực tế của nhân viên trong tháng từ bảng ChamCong
+    SELECT @SoGioLam = SUM(DATEDIFF(HOUR, GioVao, GioRa))
+    FROM ChamCong
     WHERE MaNV = @MaNV;
+
+    -- Tính Lương tăng ca (Số giờ tăng ca * tỷ lệ 1.5 * lương theo giờ)
+    SELECT @LuongTangCa = SUM(SoGioTangCa * 1.5 * @LuongCoBan)
+    FROM ChamCong
+    WHERE MaNV = @MaNV;
+
+    -- Tính Tổng lương (Lương cơ bản + Thưởng + Phụ cấp + Lương tăng ca)
+    SET @TongLuong = (@LuongCoBan * @SoGioLam) + @Thuong + @PhuCap + ISNULL(@LuongTangCa, 0);
+
+    -- Kiểm tra xem bản ghi lương đã có chưa, nếu chưa thì thêm mới
+    IF NOT EXISTS (SELECT 1 FROM Luong WHERE MaNV = @MaNV)
+    BEGIN
+        INSERT INTO Luong (MaNV, Thuong, PhuCap, LuongTangCa, TongLuong)
+        VALUES (@MaNV, @Thuong, @PhuCap, @LuongTangCa, @TongLuong);
+    END
+    ELSE
+    BEGIN
+        -- Nếu đã có bản ghi, cập nhật thông tin
+        UPDATE Luong
+        SET Thuong = @Thuong, PhuCap = @PhuCap, LuongTangCa = @LuongTangCa, TongLuong = @TongLuong
+        WHERE MaNV = @MaNV;
+    END
+
+   
+END;
+
+
+go
+CREATE PROCEDURE sp_XoaLuong
+    @MaNV INT
+AS
+BEGIN
+    -- Xóa bản ghi trong bảng Luong dựa trên MaNV
+    DELETE FROM Luong
+    WHERE MaNV = @MaNV;
+    
+    -- Trả về thông báo hoặc số lượng bản ghi bị xóa (tùy theo yêu cầu)
+    SELECT 'Xóa lương thành công' AS Message;
+END;
+
+
+
+
+
+go
+CREATE TRIGGER trg_Delete_Luong_Khi_Xoa_NhanVien
+ON NhanVien
+AFTER DELETE
+AS
+BEGIN
+    DECLARE @MaNV INT;
+
+    -- Lấy MaNV của nhân viên đã bị xóa
+    SELECT @MaNV = d.MaNV
+    FROM DELETED d;
+
+    -- Xóa bản ghi lương của nhân viên trong bảng Luong
+    DELETE FROM Luong WHERE MaNV = @MaNV;
 END;
 
 

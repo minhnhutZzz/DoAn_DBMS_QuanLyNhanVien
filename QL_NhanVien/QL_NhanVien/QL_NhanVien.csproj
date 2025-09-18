@@ -93,6 +93,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_NhanVienDataSet12.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QL_NhanVienDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_NhanVienDataSet13.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QL_NhanVienDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -157,6 +162,12 @@
     <Compile Include="UC_Quanlytaikhoan.Designer.cs">
       <DependentUpon>UC_Quanlytaikhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_TinhLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TinhLuong.Designer.cs">
+      <DependentUpon>UC_TinhLuong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Quanlytaikhoan.resx">
       <DependentUpon>UC_Quanlytaikhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TinhLuong.resx">
+      <DependentUpon>UC_TinhLuong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -249,6 +263,17 @@
     </None>
     <None Include="QL_NhanVienDataSet12.xss">
       <DependentUpon>QL_NhanVienDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet13.xsc">
+      <DependentUpon>QL_NhanVienDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_NhanVienDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_NhanVienDataSet13.xss">
+      <DependentUpon>QL_NhanVienDataSet13.xsd</DependentUpon>
     </None>
     <None Include="QL_NhanVienDataSet2.xsc">
       <DependentUpon>QL_NhanVienDataSet2.xsd</DependentUpon>
@@ -383,6 +408,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-bag.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
