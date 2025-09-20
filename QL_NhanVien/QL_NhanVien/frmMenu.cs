@@ -82,11 +82,23 @@ namespace QL_NhanVien
         private void btnXembangluong_Click(object sender, EventArgs e)
         {
 
+            if (GlobalState.VaiTro == "QuanLy")
+            {
+                MessageBox.Show("Bạn không cần vào chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            LoadForm(new UC_Xembangluong());
         }
 
         private void btnHosocanhan_Click(object sender, EventArgs e)
         {
 
+            if (GlobalState.VaiTro == "QuanLy")
+            {
+                MessageBox.Show("Bạn không cần vào chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            LoadForm(new UC_Hosonhanvien());
         }
 
         private void pnMenu_Paint(object sender, PaintEventArgs e)

@@ -1,6 +1,93 @@
 ﻿use QL_NhanVien;
 go
 
+-- Hàm trả về bảng được định nghĩa
+go
+CREATE FUNCTION dbo.fn_HienThiThongTinLuong
+    (@MaNV INT)
+RETURNS @LuongTable TABLE 
+(
+    [Mã nhân viên] INT,          -- Mã nhân viên
+    [Họ tên] NVARCHAR(100),      -- Họ tên của nhân viên
+    [Ngày chấm công] DATE,       -- Ngày làm việc
+    [Giờ vào] TIME,              -- Giờ vào làm
+    [Giờ ra] TIME,               -- Giờ ra làm
+    [Số giờ làm] INT,            -- Số giờ làm trong ngày
+    [Số giờ tăng ca] INT,        -- Số giờ tăng ca
+    [Lương thưởng] DECIMAL(18, 2), -- Lương thưởng của nhân viên
+    [Lương phụ cấp] DECIMAL(18, 2), -- Phụ cấp của nhân viên
+    [Lương tăng ca] DECIMAL(18, 2), -- Lương tăng ca
+    [Tổng lương] DECIMAL(18, 2)  -- Tổng lương của nhân viên
+)
+AS
+BEGIN
+    -- Chèn dữ liệu vào bảng table trả về
+    INSERT INTO @LuongTable
+    SELECT 
+        NV.MaNV, 
+        NV.HoTen, 
+        CC.Ngay, 
+        CC.GioVao, 
+        CC.GioRa, 
+        DATEDIFF(HOUR, CC.GioVao, CC.GioRa) AS SoGioLam,  -- Tính số giờ làm việc trong ngày
+        CC.SoGioTangCa, 
+        L.Thuong, 
+        L.PhuCap, 
+        L.LuongTangCa, 
+        L.TongLuong
+    FROM 
+        NhanVien NV
+    JOIN 
+        ChamCong CC ON NV.MaNV = CC.MaNV
+    JOIN 
+        Luong L ON NV.MaNV = L.MaNV
+    WHERE 
+        NV.MaNV = @MaNV;  -- Điều kiện lọc theo mã nhân viên
+
+    -- Trả về bảng dữ liệu
+    RETURN;
+END;
+
+
+GO
+CREATE FUNCTION dbo.fn_Hosonhanvien (@MaTK INT)
+RETURNS @HoSoTable TABLE
+(
+    [Tên Tài Khoản] NVARCHAR(100),
+    [Mật khẩu] NVARCHAR(100),
+    [Họ tên] NVARCHAR(100),
+    [Địa chỉ] NVARCHAR(255),
+    [Ngày sinh] DATE,
+    [Email] NVARCHAR(100),
+    [Số điện thoại] NVARCHAR(20),
+    [Tên Công Việc] NVARCHAR(100)
+)
+AS
+BEGIN
+    -- Chọn dữ liệu từ bảng TaiKhoan, NhanVien, và CongViec
+    INSERT INTO @HoSoTable
+    SELECT 
+        TK.TenTK, 
+        TK.MatKhau, 
+        NV.HoTen, 
+        NV.DiaChi, 
+        NV.NgaySinh, 
+        NV.Email, 
+        NV.SDT, 
+        CV.TenCV
+    FROM 
+        TaiKhoan TK
+    JOIN 
+        NhanVien NV ON TK.MaTK = NV.MaTK
+    JOIN 
+        CongViec CV ON NV.MaCV = CV.MaCV
+    WHERE 
+        TK.MaTK = @MaTK;  
+
+    RETURN;
+END;
+GO
+
 
 --Hàm trả về bảng 
 go 

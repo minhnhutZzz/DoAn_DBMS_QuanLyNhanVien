@@ -8,6 +8,7 @@ namespace QL_NhanVien
 {
    public static class GlobalState
     {
+        public static int MaTK { get; set; }
         public static string TenTaiKhoan { get; set; }
         public static string VaiTro { get; set; }
         public static string ConnectionString { get; set; }

@@ -29,12 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvChamCong = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioVaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioRaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soGioLamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soGioTangCaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chamCongBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qL_NhanVienDataSet12 = new QL_NhanVien.QL_NhanVienDataSet12();
             this.btnChamCong = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,19 +54,11 @@
             this.dtpGiovao = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpGiora = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtSogiotangca = new Guna.UI2.WinForms.Guna2TextBox();
-            this.qL_NhanVienDataSet12 = new QL_NhanVien.QL_NhanVienDataSet12();
-            this.chamCongBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chamCongTableAdapter = new QL_NhanVien.QL_NhanVienDataSet12TableAdapters.ChamCongTableAdapter();
-            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioVaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioRaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soGioLamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soGioTangCaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChamCong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qL_NhanVienDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chamCongBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_NhanVienDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,25 +80,25 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(529, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 39);
+            this.label2.Size = new System.Drawing.Size(200, 38);
             this.label2.TabIndex = 1;
             this.label2.Text = "Chấm Công";
             // 
             // dgvChamCong
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dgvChamCong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvChamCong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvChamCong.AutoGenerateColumns = false;
             this.dgvChamCong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dgvChamCong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChamCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChamCong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvChamCong.ColumnHeadersHeight = 22;
             this.dgvChamCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvChamCong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -109,14 +109,14 @@
             this.soGioLamDataGridViewTextBoxColumn,
             this.soGioTangCaDataGridViewTextBoxColumn});
             this.dgvChamCong.DataSource = this.chamCongBindingSource;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChamCong.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChamCong.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvChamCong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvChamCong.Location = new System.Drawing.Point(459, 179);
             this.dgvChamCong.Name = "dgvChamCong";
@@ -147,6 +147,59 @@
             this.dgvChamCong.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvChamCong.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // maNVDataGridViewTextBoxColumn
+            // 
+            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
+            // 
+            // ngayDataGridViewTextBoxColumn
+            // 
+            this.ngayDataGridViewTextBoxColumn.DataPropertyName = "Ngay";
+            this.ngayDataGridViewTextBoxColumn.HeaderText = "Ngay";
+            this.ngayDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngayDataGridViewTextBoxColumn.Name = "ngayDataGridViewTextBoxColumn";
+            // 
+            // gioVaoDataGridViewTextBoxColumn
+            // 
+            this.gioVaoDataGridViewTextBoxColumn.DataPropertyName = "GioVao";
+            this.gioVaoDataGridViewTextBoxColumn.HeaderText = "GioVao";
+            this.gioVaoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gioVaoDataGridViewTextBoxColumn.Name = "gioVaoDataGridViewTextBoxColumn";
+            // 
+            // gioRaDataGridViewTextBoxColumn
+            // 
+            this.gioRaDataGridViewTextBoxColumn.DataPropertyName = "GioRa";
+            this.gioRaDataGridViewTextBoxColumn.HeaderText = "GioRa";
+            this.gioRaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gioRaDataGridViewTextBoxColumn.Name = "gioRaDataGridViewTextBoxColumn";
+            // 
+            // soGioLamDataGridViewTextBoxColumn
+            // 
+            this.soGioLamDataGridViewTextBoxColumn.DataPropertyName = "SoGioLam";
+            this.soGioLamDataGridViewTextBoxColumn.HeaderText = "SoGioLam";
+            this.soGioLamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.soGioLamDataGridViewTextBoxColumn.Name = "soGioLamDataGridViewTextBoxColumn";
+            this.soGioLamDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // soGioTangCaDataGridViewTextBoxColumn
+            // 
+            this.soGioTangCaDataGridViewTextBoxColumn.DataPropertyName = "SoGioTangCa";
+            this.soGioTangCaDataGridViewTextBoxColumn.HeaderText = "SoGioTangCa";
+            this.soGioTangCaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.soGioTangCaDataGridViewTextBoxColumn.Name = "soGioTangCaDataGridViewTextBoxColumn";
+            // 
+            // chamCongBindingSource
+            // 
+            this.chamCongBindingSource.DataMember = "ChamCong";
+            this.chamCongBindingSource.DataSource = this.qL_NhanVienDataSet12;
+            // 
+            // qL_NhanVienDataSet12
+            // 
+            this.qL_NhanVienDataSet12.DataSetName = "QL_NhanVienDataSet12";
+            this.qL_NhanVienDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnChamCong
             // 
             this.btnChamCong.BorderRadius = 30;
@@ -154,10 +207,10 @@
             this.btnChamCong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChamCong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChamCong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChamCong.FillColor = System.Drawing.Color.SpringGreen;
+            this.btnChamCong.FillColor = System.Drawing.Color.RoyalBlue;
             this.btnChamCong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChamCong.ForeColor = System.Drawing.Color.Black;
-            this.btnChamCong.Location = new System.Drawing.Point(576, 469);
+            this.btnChamCong.Location = new System.Drawing.Point(580, 469);
             this.btnChamCong.Name = "btnChamCong";
             this.btnChamCong.Size = new System.Drawing.Size(515, 64);
             this.btnChamCong.TabIndex = 3;
@@ -245,7 +298,7 @@
             this.dtpNgay.Checked = true;
             this.dtpNgay.FillColor = System.Drawing.Color.White;
             this.dtpNgay.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgay.Location = new System.Drawing.Point(193, 237);
             this.dtpNgay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -309,62 +362,9 @@
             this.txtSogiotangca.Size = new System.Drawing.Size(234, 69);
             this.txtSogiotangca.TabIndex = 13;
             // 
-            // qL_NhanVienDataSet12
-            // 
-            this.qL_NhanVienDataSet12.DataSetName = "QL_NhanVienDataSet12";
-            this.qL_NhanVienDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // chamCongBindingSource
-            // 
-            this.chamCongBindingSource.DataMember = "ChamCong";
-            this.chamCongBindingSource.DataSource = this.qL_NhanVienDataSet12;
-            // 
             // chamCongTableAdapter
             // 
             this.chamCongTableAdapter.ClearBeforeFill = true;
-            // 
-            // maNVDataGridViewTextBoxColumn
-            // 
-            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
-            this.maNVDataGridViewTextBoxColumn.HeaderText = "MaNV";
-            this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
-            // 
-            // ngayDataGridViewTextBoxColumn
-            // 
-            this.ngayDataGridViewTextBoxColumn.DataPropertyName = "Ngay";
-            this.ngayDataGridViewTextBoxColumn.HeaderText = "Ngay";
-            this.ngayDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ngayDataGridViewTextBoxColumn.Name = "ngayDataGridViewTextBoxColumn";
-            // 
-            // gioVaoDataGridViewTextBoxColumn
-            // 
-            this.gioVaoDataGridViewTextBoxColumn.DataPropertyName = "GioVao";
-            this.gioVaoDataGridViewTextBoxColumn.HeaderText = "GioVao";
-            this.gioVaoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gioVaoDataGridViewTextBoxColumn.Name = "gioVaoDataGridViewTextBoxColumn";
-            // 
-            // gioRaDataGridViewTextBoxColumn
-            // 
-            this.gioRaDataGridViewTextBoxColumn.DataPropertyName = "GioRa";
-            this.gioRaDataGridViewTextBoxColumn.HeaderText = "GioRa";
-            this.gioRaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gioRaDataGridViewTextBoxColumn.Name = "gioRaDataGridViewTextBoxColumn";
-            // 
-            // soGioLamDataGridViewTextBoxColumn
-            // 
-            this.soGioLamDataGridViewTextBoxColumn.DataPropertyName = "SoGioLam";
-            this.soGioLamDataGridViewTextBoxColumn.HeaderText = "SoGioLam";
-            this.soGioLamDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soGioLamDataGridViewTextBoxColumn.Name = "soGioLamDataGridViewTextBoxColumn";
-            this.soGioLamDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // soGioTangCaDataGridViewTextBoxColumn
-            // 
-            this.soGioTangCaDataGridViewTextBoxColumn.DataPropertyName = "SoGioTangCa";
-            this.soGioTangCaDataGridViewTextBoxColumn.HeaderText = "SoGioTangCa";
-            this.soGioTangCaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soGioTangCaDataGridViewTextBoxColumn.Name = "soGioTangCaDataGridViewTextBoxColumn";
             // 
             // guna2PictureBox1
             // 
@@ -381,7 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
+            this.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.txtSogiotangca);
             this.Controls.Add(this.dtpGiora);
@@ -401,8 +401,8 @@
             this.Size = new System.Drawing.Size(1259, 638);
             this.Load += new System.EventHandler(this.UC_ChamCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChamCong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qL_NhanVienDataSet12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chamCongBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_NhanVienDataSet12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

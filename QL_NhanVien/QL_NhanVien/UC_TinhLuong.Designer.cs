@@ -29,14 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvBangluongnhanvien = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.qL_NhanVienDataSet13 = new QL_NhanVien.QL_NhanVienDataSet13();
+            this.MaLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhuCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LuongTangCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.luongBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qL_NhanVienDataSet13 = new QL_NhanVien.QL_NhanVienDataSet13();
+            this.label2 = new System.Windows.Forms.Label();
             this.luongTableAdapter = new QL_NhanVien.QL_NhanVienDataSet13TableAdapters.LuongTableAdapter();
             this.btnthemcapnhatluong = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,15 +59,9 @@
             this.txtTongluongnhanvientheoMaNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.MaLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhuCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LuongTangCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangluongnhanvien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qL_NhanVienDataSet13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luongBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_NhanVienDataSet13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,25 +71,25 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(485, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(309, 39);
+            this.label1.Size = new System.Drawing.Size(297, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản lý tiền lương";
             // 
             // dgvBangluongnhanvien
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvBangluongnhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvBangluongnhanvien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBangluongnhanvien.AutoGenerateColumns = false;
             this.dgvBangluongnhanvien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dgvBangluongnhanvien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBangluongnhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBangluongnhanvien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvBangluongnhanvien.ColumnHeadersHeight = 20;
             this.dgvBangluongnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvBangluongnhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -100,14 +100,14 @@
             this.LuongTangCa,
             this.TongLuong});
             this.dgvBangluongnhanvien.DataSource = this.luongBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBangluongnhanvien.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBangluongnhanvien.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBangluongnhanvien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBangluongnhanvien.Location = new System.Drawing.Point(440, 207);
             this.dgvBangluongnhanvien.Name = "dgvBangluongnhanvien";
@@ -139,6 +139,59 @@
             this.dgvBangluongnhanvien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBangluongnhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangluong_CellClick);
             // 
+            // MaLuong
+            // 
+            this.MaLuong.DataPropertyName = "MaLuong";
+            this.MaLuong.HeaderText = "MaLuong";
+            this.MaLuong.MinimumWidth = 6;
+            this.MaLuong.Name = "MaLuong";
+            this.MaLuong.ReadOnly = true;
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "MaNV";
+            this.MaNV.MinimumWidth = 6;
+            this.MaNV.Name = "MaNV";
+            // 
+            // Thuong
+            // 
+            this.Thuong.DataPropertyName = "Thuong";
+            this.Thuong.HeaderText = "Thuong";
+            this.Thuong.MinimumWidth = 6;
+            this.Thuong.Name = "Thuong";
+            // 
+            // PhuCap
+            // 
+            this.PhuCap.DataPropertyName = "PhuCap";
+            this.PhuCap.HeaderText = "PhuCap";
+            this.PhuCap.MinimumWidth = 6;
+            this.PhuCap.Name = "PhuCap";
+            // 
+            // LuongTangCa
+            // 
+            this.LuongTangCa.DataPropertyName = "LuongTangCa";
+            this.LuongTangCa.HeaderText = "LuongTangCa";
+            this.LuongTangCa.MinimumWidth = 6;
+            this.LuongTangCa.Name = "LuongTangCa";
+            // 
+            // TongLuong
+            // 
+            this.TongLuong.DataPropertyName = "TongLuong";
+            this.TongLuong.HeaderText = "TongLuong";
+            this.TongLuong.MinimumWidth = 6;
+            this.TongLuong.Name = "TongLuong";
+            // 
+            // luongBindingSource
+            // 
+            this.luongBindingSource.DataMember = "Luong";
+            this.luongBindingSource.DataSource = this.qL_NhanVienDataSet13;
+            // 
+            // qL_NhanVienDataSet13
+            // 
+            this.qL_NhanVienDataSet13.DataSetName = "QL_NhanVienDataSet13";
+            this.qL_NhanVienDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -149,23 +202,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Bảng lương nhân viên";
             // 
-            // qL_NhanVienDataSet13
-            // 
-            this.qL_NhanVienDataSet13.DataSetName = "QL_NhanVienDataSet13";
-            this.qL_NhanVienDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // luongBindingSource
-            // 
-            this.luongBindingSource.DataMember = "Luong";
-            this.luongBindingSource.DataSource = this.qL_NhanVienDataSet13;
-            // 
             // luongTableAdapter
             // 
             this.luongTableAdapter.ClearBeforeFill = true;
             // 
             // btnthemcapnhatluong
             // 
-            this.btnthemcapnhatluong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnthemcapnhatluong.BackColor = System.Drawing.Color.Yellow;
             this.btnthemcapnhatluong.BorderRadius = 20;
             this.btnthemcapnhatluong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnthemcapnhatluong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -273,7 +316,7 @@
             // 
             // btnXoaluong
             // 
-            this.btnXoaluong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnXoaluong.BackColor = System.Drawing.Color.Yellow;
             this.btnXoaluong.BorderColor = System.Drawing.Color.Yellow;
             this.btnXoaluong.BorderRadius = 20;
             this.btnXoaluong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -380,54 +423,11 @@
             this.guna2PictureBox1.TabIndex = 19;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // MaLuong
-            // 
-            this.MaLuong.DataPropertyName = "MaLuong";
-            this.MaLuong.HeaderText = "MaLuong";
-            this.MaLuong.MinimumWidth = 6;
-            this.MaLuong.Name = "MaLuong";
-            this.MaLuong.ReadOnly = true;
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "MaNV";
-            this.MaNV.MinimumWidth = 6;
-            this.MaNV.Name = "MaNV";
-            // 
-            // Thuong
-            // 
-            this.Thuong.DataPropertyName = "Thuong";
-            this.Thuong.HeaderText = "Thuong";
-            this.Thuong.MinimumWidth = 6;
-            this.Thuong.Name = "Thuong";
-            // 
-            // PhuCap
-            // 
-            this.PhuCap.DataPropertyName = "PhuCap";
-            this.PhuCap.HeaderText = "PhuCap";
-            this.PhuCap.MinimumWidth = 6;
-            this.PhuCap.Name = "PhuCap";
-            // 
-            // LuongTangCa
-            // 
-            this.LuongTangCa.DataPropertyName = "LuongTangCa";
-            this.LuongTangCa.HeaderText = "LuongTangCa";
-            this.LuongTangCa.MinimumWidth = 6;
-            this.LuongTangCa.Name = "LuongTangCa";
-            // 
-            // TongLuong
-            // 
-            this.TongLuong.DataPropertyName = "TongLuong";
-            this.TongLuong.HeaderText = "TongLuong";
-            this.TongLuong.MinimumWidth = 6;
-            this.TongLuong.Name = "TongLuong";
-            // 
             // UC_TinhLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.Yellow;
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtTongluongnhanvientheoMaNV);
@@ -450,8 +450,8 @@
             this.Size = new System.Drawing.Size(1186, 692);
             this.Load += new System.EventHandler(this.UC_TinhLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangluongnhanvien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qL_NhanVienDataSet13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luongBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_NhanVienDataSet13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -32,16 +32,22 @@ GRANT EXECUTE ON sp_ThemCongViec TO role_QuanLy;
 GRANT EXECUTE ON sp_XoaCongViec TO role_QuanLy;
 GRANT EXECUTE ON sp_CapNhatCongViec TO role_QuanLy;
 
+GRANT EXECUTE ON sp_ChamCong TO role_QuanLy;
+
+GRANT EXECUTE ON sp_XoaLuong TO role_QuanLy;
+GRANT EXECUTE ON sp_TinhLuong TO role_QuanLy;
+
 
 -- Các scalar function
 GRANT EXECUTE ON fn_LuongTheoGio TO role_QuanLy;
 GRANT EXECUTE ON fn_TongGioLamTrongThang TO role_QuanLy;
 GRANT EXECUTE ON fn_TongGioTangCaTrongThang TO role_QuanLy;
+GRANT EXECUTE ON fn_TinhTongLuong TO role_QuanLy;
+GRANT EXECUTE ON fn_TinhTongLuongTheoMaNV TO role_QuanLy;
 
 -- Table-valued functions (cấp quyền SELECT)
 GRANT SELECT ON fn_ThongKeSoNhanVienTheoCongViec TO role_QuanLy;
 GRANT SELECT ON fn_DanhSachNhanVienTheoTenCongViec TO role_QuanLy;
-GRANT SELECT ON fn_BangLuongThang TO role_QuanLy;
 
 -- PHÂN QUYỀN CHO ROLE: NhanVien
 -- Chỉ được xem và chấm công cho chính mình
@@ -59,6 +65,10 @@ GRANT EXECUTE ON fn_LuongTheoGio TO role_NhanVien;
 GRANT EXECUTE ON fn_TongGioLamTrongThang TO role_NhanVien;
 GRANT EXECUTE ON fn_TongGioTangCaTrongThang TO role_NhanVien;
 GRANT SELECT ON fn_BangLuongThang TO role_NhanVien;
+GRANT SELECT ON fn_HienThiThongTinLuong TO role_NhanVien;
+GRANT SELECT ON fn_Hosonhanvien TO role_NhanVien;
+
+
 
 
 -- GÁN USER VÀO ROLE 

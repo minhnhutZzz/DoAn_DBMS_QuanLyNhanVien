@@ -98,6 +98,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_NhanVienDataSet13.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QL_NhanVienDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_NhanVienDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QL_NhanVienDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_NhanVienDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QL_NhanVienDataSet161.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_NhanVienDataSet161.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QL_NhanVienDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -144,6 +159,12 @@
     <Compile Include="UC_ChamCong.Designer.cs">
       <DependentUpon>UC_ChamCong.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Hosonhanvien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Hosonhanvien.Designer.cs">
+      <DependentUpon>UC_Hosonhanvien.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Quanlycongviec.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -168,6 +189,12 @@
     <Compile Include="UC_TinhLuong.Designer.cs">
       <DependentUpon>UC_TinhLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Xembangluong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Xembangluong.Designer.cs">
+      <DependentUpon>UC_Xembangluong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +214,9 @@
     <EmbeddedResource Include="UC_ChamCong.resx">
       <DependentUpon>UC_ChamCong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_Hosonhanvien.resx">
+      <DependentUpon>UC_Hosonhanvien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Quanlycongviec.resx">
       <DependentUpon>UC_Quanlycongviec.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_TinhLuong.resx">
       <DependentUpon>UC_TinhLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Xembangluong.resx">
+      <DependentUpon>UC_Xembangluong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -274,6 +307,39 @@
     </None>
     <None Include="QL_NhanVienDataSet13.xss">
       <DependentUpon>QL_NhanVienDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet14.xsc">
+      <DependentUpon>QL_NhanVienDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_NhanVienDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_NhanVienDataSet14.xss">
+      <DependentUpon>QL_NhanVienDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet15.xsc">
+      <DependentUpon>QL_NhanVienDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_NhanVienDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_NhanVienDataSet15.xss">
+      <DependentUpon>QL_NhanVienDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet161.xsc">
+      <DependentUpon>QL_NhanVienDataSet161.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NhanVienDataSet161.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_NhanVienDataSet161.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_NhanVienDataSet161.xss">
+      <DependentUpon>QL_NhanVienDataSet161.xsd</DependentUpon>
     </None>
     <None Include="QL_NhanVienDataSet2.xsc">
       <DependentUpon>QL_NhanVienDataSet2.xsd</DependentUpon>
@@ -411,6 +477,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\money-bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\luong.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\luong2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgLuong.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgLuong1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thiết kế chưa có tên.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cửa hàng bán quần áo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cửa hàng bán quần áo3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

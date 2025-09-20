@@ -59,8 +59,8 @@ namespace QL_NhanVien
                     {
                         // Đăng nhập thành công
                         GlobalState.TenTaiKhoan = tenTK;
-                        GlobalState.VaiTro = dt.Rows[0]["VaiTro"].ToString();   
-                        
+                        GlobalState.VaiTro = dt.Rows[0]["VaiTro"].ToString();  
+                        GlobalState.MaTK = Convert.ToInt32(dt.Rows[0]["MaTK"]);
 
                         // Gán ConnectionString trực tiếp bằng tài khoản SQL login vừa nhập
                         GlobalState.ConnectionString = $@"Server=MINH_NHUT\MINH_NHUT;Database=QL_NhanVien;User Id={tenTK};Password={matKhau}";
