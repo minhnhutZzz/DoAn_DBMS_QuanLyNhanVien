@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnLogin = new Guna.UI2.WinForms.Guna2Panel();
+            this.pbLogin = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.llblForgotPassword = new System.Windows.Forms.LinkLabel();
             this.btnSignin = new Guna.UI2.WinForms.Guna2Button();
@@ -38,6 +39,7 @@
             this.txtTenTK = new Guna.UI2.WinForms.Guna2TextBox();
             this.Login = new System.Windows.Forms.Label();
             this.pnLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -47,8 +49,10 @@
             // 
             // pnLogin
             // 
+            this.pnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnLogin.BackgroundImage = global::QL_NhanVien.Properties.Resources.bg;
             this.pnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnLogin.Controls.Add(this.pbLogin);
             this.pnLogin.Controls.Add(this.label1);
             this.pnLogin.Controls.Add(this.llblForgotPassword);
             this.pnLogin.Controls.Add(this.btnSignin);
@@ -60,6 +64,20 @@
             this.pnLogin.Size = new System.Drawing.Size(942, 552);
             this.pnLogin.TabIndex = 0;
             this.pnLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLogin_Paint);
+            // 
+            // pbLogin
+            // 
+            this.pbLogin.BackColor = System.Drawing.Color.Transparent;
+            this.pbLogin.Image = global::QL_NhanVien.Properties.Resources.no;
+            this.pbLogin.ImageRotate = 0F;
+            this.pbLogin.Location = new System.Drawing.Point(869, 15);
+            this.pbLogin.Name = "pbLogin";
+            this.pbLogin.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbLogin.Size = new System.Drawing.Size(56, 52);
+            this.pbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogin.TabIndex = 10;
+            this.pbLogin.TabStop = false;
+            this.pbLogin.Click += new System.EventHandler(this.pbLogin_Click);
             // 
             // label1
             // 
@@ -87,6 +105,7 @@
             this.llblForgotPassword.TabStop = true;
             this.llblForgotPassword.Text = "Forgot Password?";
             this.llblForgotPassword.VisitedLinkColor = System.Drawing.Color.White;
+            this.llblForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblForgotPassword_LinkClicked);
             // 
             // btnSignin
             // 
@@ -120,7 +139,7 @@
             this.txtMatKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMatKhau.FillColor = System.Drawing.Color.WhiteSmoke;
             this.txtMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMatKhau.IconLeft = global::QL_NhanVien.Properties.Resources.padlock;
@@ -147,7 +166,7 @@
             this.txtTenTK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenTK.FillColor = System.Drawing.Color.WhiteSmoke;
             this.txtTenTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenTK.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTenTK.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenTK.ForeColor = System.Drawing.Color.Black;
             this.txtTenTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenTK.IconLeft = global::QL_NhanVien.Properties.Resources.user;
@@ -179,11 +198,15 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1139, 692);
             this.Controls.Add(this.pnLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.pnLogin.ResumeLayout(false);
             this.pnLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,6 +221,7 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.LinkLabel llblForgotPassword;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pbLogin;
     }
 }
 

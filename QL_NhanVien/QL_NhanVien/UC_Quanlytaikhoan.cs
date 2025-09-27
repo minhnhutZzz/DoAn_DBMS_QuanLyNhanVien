@@ -23,7 +23,6 @@ namespace QL_NhanVien
         {
             
             cboVaiTro.Items.Clear();
-            cboVaiTro.Items.Add("QuanLy");
             cboVaiTro.Items.Add("NhanVien");
             cboVaiTro.SelectedIndex = 0;
 
@@ -32,7 +31,7 @@ namespace QL_NhanVien
 
         private void LoadDanhSachTaiKhoan()
         {
-            string sql = "SELECT * FROM TaiKhoan";
+            string sql = "SELECT * FROM vw_TaiKhoan";
             dgvTaiKhoan.DataSource = db.ExecuteQuery(sql);
         }
 
@@ -126,6 +125,19 @@ namespace QL_NhanVien
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text.Trim();
+
+            // Tạo tham số truyền vào thủ tục
+            SqlParameter[] parameters = {
+        new SqlParameter("@Search", searchText)
+    };
+
+            Database db = new Database();
+            dgvTaiKhoan.DataSource = db.ExecuteProcToTable("sp_TimKiemTaiKhoan", parameters);
         }
     }
 }

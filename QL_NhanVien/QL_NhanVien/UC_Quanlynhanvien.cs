@@ -19,7 +19,7 @@ namespace QL_NhanVien
         }
         private void LoadDanhSachSinhVien()
         {
-            string sql = "SELECT * FROM NhanVien";
+            string sql = "SELECT * FROM vw_NhanVien";
             Database db = new Database();
            dgvNhanvien.DataSource = db.ExecuteQuery(sql);
         }
@@ -215,6 +215,18 @@ namespace QL_NhanVien
         private void dgvNhanvientheocongviec_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text.Trim();
+
+            SqlParameter[] parameters = {
+        new SqlParameter("@Search", searchText)
+    };
+
+            Database db = new Database();
+            dgvNhanvien.DataSource = db.ExecuteProcToTable("sp_TimKiemNhanVien", parameters);
         }
     }
 }

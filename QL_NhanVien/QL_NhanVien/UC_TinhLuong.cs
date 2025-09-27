@@ -20,7 +20,7 @@ namespace QL_NhanVien
 
         private void LoadLuong()
         {
-            string sql = "SELECT * FROM Luong";
+            string sql = "SELECT * FROM vw_Luong";
             Database db = new Database();
             dgvBangluongnhanvien.DataSource = db.ExecuteQuery(sql); // Hiển thị lại bảng lương sau khi thực hiện thao tác
         }
@@ -105,22 +105,6 @@ namespace QL_NhanVien
                 // Tính tổng lương phải trả khi bảng lương được load lại
                 TinhTongLuong();
 
-                int maNV = Convert.ToInt32(row.Cells["MaNV"].Value);  // Mã nhân viên
-
-                // Gọi hàm TinhTongLuongTheoMaNV từ cơ sở dữ liệu để tính tổng lương theo MaNV
-                string sql = "SELECT dbo.fn_TinhTongLuongTheoMaNV(@MaNV) AS TongLuong";
-                SqlParameter[] parameters = {
-                    new SqlParameter("@MaNV", maNV)
-                };
-
-                Database db = new Database();
-                var result = db.ExecuteQuery(sql, parameters);  // Thực thi câu lệnh SQL gọi hàm
-
-                // Lấy tổng lương từ kết quả trả về
-                decimal tongLuong = Convert.ToDecimal(result.Rows[0]["TongLuong"]);
-
-                // Hiển thị tổng lương trong TextBox
-                txtTongluongnhanvientheoMaNV.Text = tongLuong.ToString("C");
             }
         }
         private void TinhTongLuong()
@@ -150,7 +134,7 @@ namespace QL_NhanVien
             txtThuong.Clear();               // Xóa Thưởng
             txtPhucap.Clear();               // Xóa Phụ cấp
             txtTongluongphaitra.Clear();     // Xóa Tổng lương phải trả
-            txtTongluongnhanvientheoMaNV.Clear();  // Xóa Tổng lương của nhân viên theo MaNV
+           
         }
 
 

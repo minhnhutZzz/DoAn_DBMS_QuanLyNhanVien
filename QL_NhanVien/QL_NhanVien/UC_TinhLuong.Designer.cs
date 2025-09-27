@@ -55,9 +55,6 @@
             this.lblTongluongphaitra = new System.Windows.Forms.Label();
             this.txtTongluongphaitra = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtTongluongnhanvientheoMaNV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangluongnhanvien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luongBindingSource)).BeginInit();
@@ -102,8 +99,8 @@
             this.dgvBangluongnhanvien.DataSource = this.luongBindingSource;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -114,7 +111,7 @@
             this.dgvBangluongnhanvien.RowHeadersVisible = false;
             this.dgvBangluongnhanvien.RowHeadersWidth = 51;
             this.dgvBangluongnhanvien.RowTemplate.Height = 24;
-            this.dgvBangluongnhanvien.Size = new System.Drawing.Size(718, 202);
+            this.dgvBangluongnhanvien.Size = new System.Drawing.Size(770, 212);
             this.dgvBangluongnhanvien.TabIndex = 1;
             this.dgvBangluongnhanvien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBangluongnhanvien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -196,7 +193,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(662, 150);
+            this.label2.Location = new System.Drawing.Point(701, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(263, 29);
             this.label2.TabIndex = 2;
@@ -264,7 +261,8 @@
             this.txtManhanvien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtManhanvien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtManhanvien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtManhanvien.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtManhanvien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtManhanvien.ForeColor = System.Drawing.Color.Black;
             this.txtManhanvien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtManhanvien.Location = new System.Drawing.Point(183, 182);
             this.txtManhanvien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -284,7 +282,8 @@
             this.txtThuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtThuong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtThuong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtThuong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtThuong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThuong.ForeColor = System.Drawing.Color.Black;
             this.txtThuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtThuong.Location = new System.Drawing.Point(183, 266);
             this.txtThuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -304,7 +303,8 @@
             this.txtPhucap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPhucap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPhucap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhucap.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPhucap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhucap.ForeColor = System.Drawing.Color.Black;
             this.txtPhucap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhucap.Location = new System.Drawing.Point(183, 348);
             this.txtPhucap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -336,10 +336,10 @@
             // lblTongluongphaitra
             // 
             this.lblTongluongphaitra.AutoSize = true;
-            this.lblTongluongphaitra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongluongphaitra.Location = new System.Drawing.Point(570, 444);
+            this.lblTongluongphaitra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongluongphaitra.Location = new System.Drawing.Point(738, 491);
             this.lblTongluongphaitra.Name = "lblTongluongphaitra";
-            this.lblTongluongphaitra.Size = new System.Drawing.Size(171, 20);
+            this.lblTongluongphaitra.Size = new System.Drawing.Size(199, 25);
             this.lblTongluongphaitra.TabIndex = 12;
             this.lblTongluongphaitra.Text = "Tổng lương phải trả";
             // 
@@ -352,9 +352,10 @@
             this.txtTongluongphaitra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTongluongphaitra.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTongluongphaitra.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTongluongphaitra.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTongluongphaitra.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongluongphaitra.ForeColor = System.Drawing.Color.Black;
             this.txtTongluongphaitra.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTongluongphaitra.Location = new System.Drawing.Point(935, 426);
+            this.txtTongluongphaitra.Location = new System.Drawing.Point(967, 479);
             this.txtTongluongphaitra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTongluongphaitra.Name = "txtTongluongphaitra";
             this.txtTongluongphaitra.PlaceholderText = "";
@@ -367,50 +368,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1085, 444);
+            this.label6.Location = new System.Drawing.Point(1119, 495);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 20);
             this.label6.TabIndex = 14;
             this.label6.Text = "VND";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(570, 495);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(285, 20);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Tổng lương nhân viên theo MaNV";
-            // 
-            // txtTongluongnhanvientheoMaNV
-            // 
-            this.txtTongluongnhanvientheoMaNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTongluongnhanvientheoMaNV.DefaultText = "";
-            this.txtTongluongnhanvientheoMaNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTongluongnhanvientheoMaNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTongluongnhanvientheoMaNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTongluongnhanvientheoMaNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTongluongnhanvientheoMaNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTongluongnhanvientheoMaNV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTongluongnhanvientheoMaNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTongluongnhanvientheoMaNV.Location = new System.Drawing.Point(935, 480);
-            this.txtTongluongnhanvientheoMaNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTongluongnhanvientheoMaNV.Name = "txtTongluongnhanvientheoMaNV";
-            this.txtTongluongnhanvientheoMaNV.PlaceholderText = "";
-            this.txtTongluongnhanvientheoMaNV.SelectedText = "";
-            this.txtTongluongnhanvientheoMaNV.Size = new System.Drawing.Size(135, 45);
-            this.txtTongluongnhanvientheoMaNV.TabIndex = 17;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1085, 495);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 20);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "VND";
             // 
             // guna2PictureBox1
             // 
@@ -429,9 +391,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
             this.Controls.Add(this.guna2PictureBox1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtTongluongnhanvientheoMaNV);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTongluongphaitra);
             this.Controls.Add(this.lblTongluongphaitra);
@@ -447,7 +406,7 @@
             this.Controls.Add(this.dgvBangluongnhanvien);
             this.Controls.Add(this.label1);
             this.Name = "UC_TinhLuong";
-            this.Size = new System.Drawing.Size(1186, 692);
+            this.Size = new System.Drawing.Size(1278, 707);
             this.Load += new System.EventHandler(this.UC_TinhLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangluongnhanvien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luongBindingSource)).EndInit();
@@ -477,9 +436,6 @@
         private System.Windows.Forms.Label lblTongluongphaitra;
         private Guna.UI2.WinForms.Guna2TextBox txtTongluongphaitra;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2TextBox txtTongluongnhanvientheoMaNV;
-        private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;

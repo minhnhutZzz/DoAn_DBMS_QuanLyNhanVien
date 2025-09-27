@@ -87,5 +87,18 @@ namespace QL_NhanVien
         {
 
         }
+
+        private void llblForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            frmForgotPassword forgotForm = new frmForgotPassword();
+            forgotForm.ShowDialog();
+            this.Show();
+        }
+
+        private void pbLogin_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

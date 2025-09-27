@@ -19,58 +19,52 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON ChamCong TO role_QuanLy;
 GRANT SELECT, INSERT, UPDATE, DELETE ON TaiKhoan TO role_QuanLy;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Luong TO role_QuanLy;
 
--- Các stored procedure
+-- Các thủ tục
 GRANT EXECUTE ON sp_ThemTaiKhoan TO role_QuanLy;
 GRANT EXECUTE ON sp_XoaTaiKhoan TO role_QuanLy;
-GRANT EXECUTE ON sp_DoiMatKhau TO role_QuanLy;
+GRANT EXECUTE ON sp_QuenMatKhau TO role_QuanLy;
+GRANT EXECUTE ON sp_TimKiemTaiKhoan TO role_QuanLy;
 
 GRANT EXECUTE ON sp_ThemNhanVien TO role_QuanLy;
 GRANT EXECUTE ON sp_XoaNhanVien TO role_QuanLy;
 GRANT EXECUTE ON sp_CapNhatNhanVien TO role_QuanLy;
+GRANT EXECUTE ON sp_TimKiemNhanVien TO role_QuanLy;
 
 GRANT EXECUTE ON sp_ThemCongViec TO role_QuanLy;
 GRANT EXECUTE ON sp_XoaCongViec TO role_QuanLy;
 GRANT EXECUTE ON sp_CapNhatCongViec TO role_QuanLy;
+GRANT EXECUTE ON sp_TimKiemCongViec TO role_QuanLy;
 
 GRANT EXECUTE ON sp_ChamCong TO role_QuanLy;
+GRANT EXECUTE ON sp_XoaBangGhiChamCong TO role_QuanLy;
+GRANT EXECUTE ON sp_XoaTatCaChamCong TO role_QuanLy;
 
 GRANT EXECUTE ON sp_XoaLuong TO role_QuanLy;
 GRANT EXECUTE ON sp_TinhLuong TO role_QuanLy;
 
-
--- Các scalar function
-GRANT EXECUTE ON fn_LuongTheoGio TO role_QuanLy;
-GRANT EXECUTE ON fn_TongGioLamTrongThang TO role_QuanLy;
-GRANT EXECUTE ON fn_TongGioTangCaTrongThang TO role_QuanLy;
+-- Các hàm trả về giá trị
 GRANT EXECUTE ON fn_TinhTongLuong TO role_QuanLy;
-GRANT EXECUTE ON fn_TinhTongLuongTheoMaNV TO role_QuanLy;
 
--- Table-valued functions (cấp quyền SELECT)
+-- Các hàm trả về bảng
 GRANT SELECT ON fn_ThongKeSoNhanVienTheoCongViec TO role_QuanLy;
 GRANT SELECT ON fn_DanhSachNhanVienTheoTenCongViec TO role_QuanLy;
 
+
+
 -- PHÂN QUYỀN CHO ROLE: NhanVien
--- Chỉ được xem và chấm công cho chính mình
-GRANT SELECT, INSERT ON ChamCong TO role_NhanVien;
--- Được xem thông tin nhân viên
+
+GRANT SELECT ON ChamCong TO role_NhanVien;
 GRANT SELECT ON NhanVien TO role_NhanVien;
--- Được xem bảng lương cá nhân
 GRANT SELECT ON Luong TO role_NhanVien;
--- Được đổi mật khẩu
 GRANT UPDATE ON TaiKhoan TO role_NhanVien;
--- Cho phép nhân viên tự đổi mật khẩu
-GRANT EXECUTE ON sp_DoiMatKhau TO role_NhanVien;
--- Các function dùng để xem dữ liệu lương cá nhân
-GRANT EXECUTE ON fn_LuongTheoGio TO role_NhanVien;
-GRANT EXECUTE ON fn_TongGioLamTrongThang TO role_NhanVien;
-GRANT EXECUTE ON fn_TongGioTangCaTrongThang TO role_NhanVien;
-GRANT SELECT ON fn_BangLuongThang TO role_NhanVien;
+
+--Thủ tục 
+GRANT EXECUTE ON sp_QuenMatKhau TO role_NhanVien;
+
+-- Các hàm 
 GRANT SELECT ON fn_HienThiThongTinLuong TO role_NhanVien;
 GRANT SELECT ON fn_Hosonhanvien TO role_NhanVien;
 
 
-
-
 -- GÁN USER VÀO ROLE 
--- Gán người dùng SQL Server vào vai trò 
 EXEC sp_addrolemember 'role_QuanLy', 'user_QuanLy'; 

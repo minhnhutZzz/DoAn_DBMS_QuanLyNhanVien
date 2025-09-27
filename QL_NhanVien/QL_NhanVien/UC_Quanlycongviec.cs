@@ -19,7 +19,7 @@ namespace QL_NhanVien
         }
         private void LoadDanhSachCongViec()
         {
-            string sql = "SELECT * FROM CongViec";
+            string sql = "SELECT * FROM vw_CongViec";
             Database db = new Database();
             dgvDanhsachcongviec.DataSource = db.ExecuteQuery(sql);
         }   
@@ -61,13 +61,13 @@ namespace QL_NhanVien
                 int rows = db.ExecuteNonQuery(sql, parameters);
                 if (rows > 0)
                 {
-                    MessageBox.Show("✅ Thêm công việc thành công!");
+                    MessageBox.Show("Thêm công việc thành công!");
                     LoadDanhSachCongViec();  // Tải lại danh sách công việc
                     ClearForm();
                 }
                 else
                 {
-                    MessageBox.Show("⚠️ Thêm công việc thất bại.");
+                    MessageBox.Show("Thêm công việc thất bại.");
                 }
             }
             catch (Exception ex)
@@ -96,13 +96,13 @@ namespace QL_NhanVien
                 int rows = db.ExecuteStoredProc("sp_CapNhatCongViec", parameters);
                 if (rows > 0)
                 {
-                    MessageBox.Show("✅ Cập nhật công việc thành công!");
+                    MessageBox.Show("Cập nhật công việc thành công!");
                     LoadDanhSachCongViec();  // Tải lại danh sách công việc
                     ClearForm();
                 }
                 else
                 {
-                    MessageBox.Show("⚠️ Cập nhật công việc thất bại.");
+                    MessageBox.Show("Cập nhật công việc thất bại.");
                 }
             }
             catch (Exception ex)
@@ -115,7 +115,7 @@ namespace QL_NhanVien
         {
             if (dgvDanhsachcongviec.SelectedRows.Count == 0)
             {
-                MessageBox.Show("⚠️ Vui lòng chọn công việc cần xóa.");
+                MessageBox.Show(" Vui lòng chọn công việc cần xóa.");
                 return;
             }
 
@@ -134,13 +134,13 @@ namespace QL_NhanVien
                     int rows = db.ExecuteStoredProc("sp_XoaCongViec", parameters);
                     if (rows > 0)
                     {
-                        MessageBox.Show("🗑️ Xóa công việc thành công!");
+                        MessageBox.Show(" Xóa công việc thành công!");
                         LoadDanhSachCongViec();  // Tải lại danh sách công việc
                         ClearForm();
                     }
                     else
                     {
-                        MessageBox.Show("⚠️ Xóa công việc thất bại.");
+                        MessageBox.Show(" Xóa công việc thất bại.");
                     }
                 }
                 catch (Exception ex)
@@ -166,6 +166,19 @@ namespace QL_NhanVien
             txtTencongviec.Clear();
             txtLuongcoban.Clear();
           
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text.Trim();
+
+            // Tạo tham số truyền vào thủ tục
+            SqlParameter[] parameters = {
+        new SqlParameter("@Search", searchText)
+    };
+
+            Database db = new Database();
+            dgvDanhsachcongviec.DataSource = db.ExecuteProcToTable("sp_TimKiemCongViec", parameters);
         }
     }
 }

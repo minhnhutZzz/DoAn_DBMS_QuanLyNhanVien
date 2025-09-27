@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblQuanlytaikhoan = new System.Windows.Forms.Label();
             this.dgvTaiKhoan = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.maTKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenTKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matKhauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vaiTroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taiKhoanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.qL_NhanVienDataSet2 = new QL_NhanVien.QL_NhanVienDataSet2();
             this.lblDanhsachtaikhoan = new System.Windows.Forms.Label();
@@ -68,6 +68,8 @@
             this.guna2AnimateWindow5 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2BorderlessForm4 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2AnimateWindow6 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_NhanVienDataSet2)).BeginInit();
@@ -83,7 +85,7 @@
             // 
             this.lblQuanlytaikhoan.AutoSize = true;
             this.lblQuanlytaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuanlytaikhoan.Location = new System.Drawing.Point(469, 33);
+            this.lblQuanlytaikhoan.Location = new System.Drawing.Point(501, 20);
             this.lblQuanlytaikhoan.Name = "lblQuanlytaikhoan";
             this.lblQuanlytaikhoan.Size = new System.Drawing.Size(288, 38);
             this.lblQuanlytaikhoan.TabIndex = 0;
@@ -91,37 +93,37 @@
             // 
             // dgvTaiKhoan
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvTaiKhoan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvTaiKhoan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTaiKhoan.AutoGenerateColumns = false;
             this.dgvTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTaiKhoan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTaiKhoan.ColumnHeadersHeight = 30;
             this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maTKDataGridViewTextBoxColumn,
-            this.tenTKDataGridViewTextBoxColumn,
-            this.matKhauDataGridViewTextBoxColumn,
-            this.vaiTroDataGridViewTextBoxColumn});
+            this.MaTK,
+            this.TenTK,
+            this.MatKhau,
+            this.VaiTro});
             this.dgvTaiKhoan.DataSource = this.taiKhoanBindingSource2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvTaiKhoan.GridColor = System.Drawing.Color.White;
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(517, 208);
+            this.dgvTaiKhoan.Location = new System.Drawing.Point(568, 208);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersVisible = false;
             this.dgvTaiKhoan.RowHeadersWidth = 51;
@@ -152,42 +154,42 @@
             this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellClick);
             this.dgvTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellContentClick);
             // 
-            // maTKDataGridViewTextBoxColumn
+            // MaTK
             // 
-            this.maTKDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.maTKDataGridViewTextBoxColumn.DataPropertyName = "MaTK";
-            this.maTKDataGridViewTextBoxColumn.HeaderText = "MaTK";
-            this.maTKDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maTKDataGridViewTextBoxColumn.Name = "maTKDataGridViewTextBoxColumn";
-            this.maTKDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maTKDataGridViewTextBoxColumn.Width = 125;
+            this.MaTK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.MaTK.DataPropertyName = "MaTK";
+            this.MaTK.HeaderText = "MaTK";
+            this.MaTK.MinimumWidth = 6;
+            this.MaTK.Name = "MaTK";
+            this.MaTK.ReadOnly = true;
+            this.MaTK.Width = 125;
             // 
-            // tenTKDataGridViewTextBoxColumn
+            // TenTK
             // 
-            this.tenTKDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.tenTKDataGridViewTextBoxColumn.DataPropertyName = "TenTK";
-            this.tenTKDataGridViewTextBoxColumn.HeaderText = "TenTK";
-            this.tenTKDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenTKDataGridViewTextBoxColumn.Name = "tenTKDataGridViewTextBoxColumn";
-            this.tenTKDataGridViewTextBoxColumn.Width = 125;
+            this.TenTK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.TenTK.DataPropertyName = "TenTK";
+            this.TenTK.HeaderText = "TenTK";
+            this.TenTK.MinimumWidth = 6;
+            this.TenTK.Name = "TenTK";
+            this.TenTK.Width = 125;
             // 
-            // matKhauDataGridViewTextBoxColumn
+            // MatKhau
             // 
-            this.matKhauDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.matKhauDataGridViewTextBoxColumn.DataPropertyName = "MatKhau";
-            this.matKhauDataGridViewTextBoxColumn.HeaderText = "MatKhau";
-            this.matKhauDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.matKhauDataGridViewTextBoxColumn.Name = "matKhauDataGridViewTextBoxColumn";
-            this.matKhauDataGridViewTextBoxColumn.Width = 125;
+            this.MatKhau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.MatKhau.DataPropertyName = "MatKhau";
+            this.MatKhau.HeaderText = "MatKhau";
+            this.MatKhau.MinimumWidth = 6;
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.Width = 125;
             // 
-            // vaiTroDataGridViewTextBoxColumn
+            // VaiTro
             // 
-            this.vaiTroDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.vaiTroDataGridViewTextBoxColumn.DataPropertyName = "VaiTro";
-            this.vaiTroDataGridViewTextBoxColumn.HeaderText = "VaiTro";
-            this.vaiTroDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vaiTroDataGridViewTextBoxColumn.Name = "vaiTroDataGridViewTextBoxColumn";
-            this.vaiTroDataGridViewTextBoxColumn.Width = 120;
+            this.VaiTro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.VaiTro.DataPropertyName = "VaiTro";
+            this.VaiTro.HeaderText = "VaiTro";
+            this.VaiTro.MinimumWidth = 6;
+            this.VaiTro.Name = "VaiTro";
+            this.VaiTro.Width = 120;
             // 
             // taiKhoanBindingSource2
             // 
@@ -203,7 +205,7 @@
             // 
             this.lblDanhsachtaikhoan.AutoSize = true;
             this.lblDanhsachtaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDanhsachtaikhoan.Location = new System.Drawing.Point(723, 145);
+            this.lblDanhsachtaikhoan.Location = new System.Drawing.Point(757, 122);
             this.lblDanhsachtaikhoan.Name = "lblDanhsachtaikhoan";
             this.lblDanhsachtaikhoan.Size = new System.Drawing.Size(246, 29);
             this.lblDanhsachtaikhoan.TabIndex = 2;
@@ -221,7 +223,8 @@
             this.txtTenTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenTK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTenTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenTK.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTenTK.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenTK.ForeColor = System.Drawing.Color.Black;
             this.txtTenTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenTK.Location = new System.Drawing.Point(165, 76);
             this.txtTenTK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -243,7 +246,8 @@
             this.txtMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMatKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMatKhau.Location = new System.Drawing.Point(165, 147);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -346,8 +350,8 @@
             this.cboVaiTro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboVaiTro.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cboVaiTro.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboVaiTro.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboVaiTro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboVaiTro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboVaiTro.ForeColor = System.Drawing.Color.Black;
             this.cboVaiTro.ItemHeight = 30;
             this.cboVaiTro.Items.AddRange(new object[] {
             "Nhân viên"});
@@ -423,12 +427,47 @@
             this.guna2BorderlessForm4.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm4.TransparentWhileDrag = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(990, 176);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 25);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Search";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderRadius = 10;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconLeft = global::QL_NhanVien.Properties.Resources.search;
+            this.txtSearch.Location = new System.Drawing.Point(1088, 167);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(139, 34);
+            this.txtSearch.TabIndex = 31;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // UC_Quanlytaikhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
@@ -437,7 +476,7 @@
             this.Controls.Add(this.lblQuanlytaikhoan);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "UC_Quanlytaikhoan";
-            this.Size = new System.Drawing.Size(1204, 628);
+            this.Size = new System.Drawing.Size(1267, 646);
             this.Load += new System.EventHandler(this.UC_Quanlytaikhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taiKhoanBindingSource2)).EndInit();
@@ -478,10 +517,6 @@
         private System.Windows.Forms.BindingSource taiKhoanBindingSource1;
         private QL_NhanVienDataSet1TableAdapters.TaiKhoanTableAdapter taiKhoanTableAdapter1;
         private QL_NhanVienDataSet2TableAdapters.TaiKhoanTableAdapter taiKhoanTableAdapter2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maTKDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenTKDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matKhauDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vaiTroDataGridViewTextBoxColumn;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow2;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow3;
@@ -491,5 +526,11 @@
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow5;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm4;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VaiTro;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
     }
 }
